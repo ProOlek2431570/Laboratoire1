@@ -1,0 +1,56 @@
+// 1. Définition de tes variables de couleurs
+$primary-color: #00ADB5;
+$bg-dark: #222831;
+$card-bg: #393E46;
+$text-light: #EEEEEE;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// 3. Personnalisation de Bootstrap
+$body-bg: $bg-dark;
+$body-color: $text-light;
+$theme-colors: (
+  "primary": $primary-color
+);
+
+// 5. Tes styles personnalisés (ex: pour tes cartes)
+.blog-card {
+  background-color: $card-bg;
+  border: 2px solid $primary-color;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+.custom-header {
+  background-color: #393E46;
+  border-bottom: 2px solid $primary;
+}
+
+.user-icon {
+  font-size: 1.5rem;
+  color: $eeeeee;
+}
+
+// Dessin des 3 lignes (Burger)
+.burger-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $eeeeee; // Tes 3 lignes
+    border-radius: 2px;
+  }
+}
+

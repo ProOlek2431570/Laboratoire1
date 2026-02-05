@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CEF - Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<script>
+    function addComment() {
+        const name = document.getElementById("nameInput").value.trim();
+        const comment = document.getElementById("commentInput").value.trim();
+        const commentList = document.getElementById("commentList");
+    
+        if (name === "" || comment === "") return;
+    
+        const commentDiv = document.createElement("div");
+        commentDiv.className = "d-flex align-items-start mb-4";
+    
+        commentDiv.innerHTML = `
+            <div class="comment-avatar me-3">
+                <i class="bi bi-person-circle" style="font-size:3rem;color:black;"></i>
+            </div>
+            <div>
+                <strong>${name}</strong>
+                <p class="mb-0">${comment}</p>
+            </div>
+        `;
+    
+        // Ajout en haut
+        commentList.prepend(commentDiv);
+    
+        // Reset
+        document.getElementById("nameInput").value = "";
+        document.getElementById("commentInput").value = "";
+    }
+    </script>
+    
+    
+<body>
+
+    <header class="container-fluid py-4" style="background-color: #222831;">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+            <div class="col-6 col-md-3">
+               <img src="images/CEPI-logo.png" alt="Logo" class="img-fluid border border-dark border-2 rounded" style="max-height: 100px;" >
+            </div>
+
+            <div class="col-md-6 d-none d-md-block">
+                <nav class="d-flex justify-content-around">
+                    <a href="index.html" class="text-white text-decoration-none fw-bold">Menu1</a>
+                    <a href="index.html" class="text-white text-decoration-none fw-bold">Menu2</a>
+                    <a href="index.html" class="text-white text-decoration-none fw-bold">Menu3</a>
+                    <a href="index.html" class="text-white text-decoration-none fw-bold">Menu4</a>
+                </nav>
+            </div>
+
+            <div class="header-actions">
+            
+                <div class="d-none d-md-block text-white fs-1">
+                    👤
+                </div>
+    
+                <button class="navbar-toggler d-md-none text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuMobile">
+                    <div style="font-size: 2.5rem; line-height: 0.8;">
+                        <div>☰</div>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+        <div class="collapse d-md-none" id="menuMobile">
+            <div class="bg-secondary p-3 mt-2">
+                <nav class="nav flex-column text-center">
+                    <a href="index.html" class="nav-link text-white fw-bold border-bottom" >Menu1</a>
+                    <a href="index.html" class="nav-link text-white fw-bold border-bottom" >Menu2</a>
+                    <a href="index.html" class="nav-link text-white fw-bold border-bottom" >Menu3</a>
+                    <a href="index.html" class="nav-link text-white fw-bold border-bottom" >Menu4</a>
+                </nav>
+            </div>
+        </div>
+        
+    </header>
+
+<!-- CONTENT -->
+<div class="container-fluid my-5" style="background-color: #EEEEEE;">
+
+    <!-- HERO -->
+    <div class="hero mb-4"></div>
+    <img class="col-12 mb-4" src="images/image blog.jpg" alt="Blog Image" style="max-height: 150px;">
+    <!-- TITLE -->
+    <h2 class="text-center mb-4">Titre du blog</h2>
+
+    <!-- TEXT -->
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus nulla ut commodo sagittis,
+        sapien dui mattis dui non pulvinar lorem felis nec erat.
+    </p>
+
+    <p>
+        Aliquam egestas, velit at condimentum placerat, sem sapien laoreet mauris, dictum porttitor lacus
+        est nec enim. Vivamus feugiat elit lorem.
+    </p>
+
+    <!-- IMAGE + CAPTION -->
+    <div class="text-center">
+        <div>
+            <img  src="images/image blog.jpg" alt="Blog Image" style="max-height: 150px;">
+        </div>
+        <small class="text-muted">Caption</small>
+    </div>
+
+    <p class="mt-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus nulla ut commodo sagittis,
+        sapien dui mattis dui non pulvinar lorem felis nec erat.
+    </p>
+
+    <!-- COMMENTS FORM -->
+    <section id="commentaires" class="container my-5">
+        <h5>Commentaires</h5>
+    
+        <!-- LISTE DES COMMENTAIRES -->
+        <div id="commentList" class="mb-4"></div>
+    
+        <!-- FORMULAIRE -->
+        <input type="text" id="nameInput" class="form-control mb-2"
+               placeholder="Votre nom">
+    
+        <textarea id="commentInput" class="form-control mb-3" rows="4"
+                  placeholder="Écrire un commentaire..."></textarea>
+    
+        <button class="btn btn-dark" onclick="addComment()">Submit</button>
+    </section>
+    
+
+<!-- FOOTER -->
+<footer class="container-fluid g-0 border-top">
+    <div class="text-center" style="background-color: #00ADB5;">
+        <div class="mb-3 fs-3">
+            <a href="#" class="text-dark mx-2 text-decoration-none">ⓕ</a>
+            <a href="#" class="text-dark mx-2 text-decoration-none">𝕏</a>
+            <a href="#" class="text-dark mx-2 text-decoration-none">🇮🇳</a>
+        </div>
+        <p class="fw-bold text-uppercase">Centre d'Expertise et de Perfectionnement en Informatique</p>
+        <p class="text-secondary small">2022</p>
+    </div>
+</footer>
+
+</body>
+</html>
