@@ -43,6 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       console.error("Erreur API :", error);
     }
-  
+  //fini
   });
   
